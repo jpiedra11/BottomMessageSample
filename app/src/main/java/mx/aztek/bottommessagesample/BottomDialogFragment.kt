@@ -111,24 +111,16 @@ class BottomDialogFragment : BottomSheetDialogFragment() {
             return this
         }
 
-        fun setFirstButtonText(firstButtonText: String): Builder {
-            arguments.putString(ARG_FIRST_BUTTON_TEXT, firstButtonText)
-            return this
-        }
+        fun setFirstButton(text: String, onFirstButtonClick: () -> Unit): Builder {
 
-        fun setSecondButtonText(secondButtonText: String): Builder {
-            arguments.putString(ARG_SECOND_BUTTON_TEXT, secondButtonText)
-            return this
-        }
-
-        fun setOnFirstButtonClick(onFirstButtonClick: () -> Unit): Builder {
-
+            arguments.putString(ARG_FIRST_BUTTON_TEXT, text)
             this.onFirstButtonClick = onFirstButtonClick
             return this
         }
 
-        fun setOnSecondButtonClick(onSecondButtonClick: () -> Unit): Builder {
+        fun setSecondButton(text: String, onSecondButtonClick: () -> Unit): Builder {
 
+            arguments.putString(ARG_SECOND_BUTTON_TEXT, text)
             this.onSecondButtonClick = onSecondButtonClick
             return this
         }

@@ -20,13 +20,11 @@ class MainActivity : AppCompatActivity() {
                     "para validar tu domicilio, " +
                     "compártenos por favor un recibo de TELMEX o CFE " +
                     "con antiguedad no mayor a 3 meses")
-            .setFirstButtonText("Tomar foto")
-            .setSecondButtonText("Cargar archivo")
-            .setOnFirstButtonClick {
+            .setFirstButton ("Tomar foto") {
                 val takePhotoIntent = Intent(this, PhotoActivity::class.java)
                 startActivity(takePhotoIntent)
             }
-            .setOnSecondButtonClick {
+            .setSecondButton ("Cargar archivo") {
                 Toast.makeText(this, "Second button clicked", Toast.LENGTH_LONG).show()
             }
             .build()
