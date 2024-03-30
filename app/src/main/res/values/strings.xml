@@ -2,4 +2,6 @@
     <string name="app_name">BottomMessageSample</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="show_address_dialog">Show Address Dialog</string>
+    <string name="show_cic_dialog">Show CIC Dialog</string>
 </resources>
