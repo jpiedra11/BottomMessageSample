@@ -4,4 +4,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="show_address_dialog">Show Address Dialog</string>
     <string name="show_cic_dialog">Show CIC Dialog</string>
+    <string name="address_title">Comprueba tu domicilio</string>
+    <string name="address_message">No pudimos detectar con exactitud tu dirección, para validar tu domicilio, compártenos por favor un recibo de TELMEX o CFE con antiguedad no mayor a 3 meses</string>
+    <string name="take_picture">Tomar foto</string>
+    <string name="load_file">Cargar archivo</string>
+    <string name="cic">CIC</string>
+    <string name="second_button_clicked">Second button clicked</string>
+    <string name="cic_message">El número CIC está al reverso de tu INE y tiene 9 dígitos. Sólo aparece en modelos D, E, F, G y H</string>
 </resources>

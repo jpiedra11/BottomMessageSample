@@ -45,24 +45,28 @@ class BottomDialogFragment : BottomSheetDialogFragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_bottom_dialog, container, false)
 
-        if (onFirstButtonClick != null) {
+        onFirstButtonClick?.let { onFirstButtonClick ->
             val firstButton = view?.findViewById<Button>(R.id.firstButton)
-            firstButton?.setOnClickListener {
-                onFirstButtonClick?.invoke()
-                dialog?.dismiss()
+            firstButton?.apply {
+                setOnClickListener {
+                    onFirstButtonClick.invoke()
+                    dialog?.dismiss()
+                }
+                text = firstButtonText
+                visibility = View.VISIBLE
             }
-            firstButton?.text = firstButtonText
-            firstButton?.visibility = View.VISIBLE
         }
 
-        if (onSecondButtonClick != null) {
+        onSecondButtonClick?.let { onSecondButtonClick ->
             val secondButton = view?.findViewById<Button>(R.id.secondButton)
-            secondButton?.setOnClickListener {
-                onSecondButtonClick?.invoke()
-                dialog?.dismiss()
+            secondButton?.apply {
+                setOnClickListener {
+                    onSecondButtonClick.invoke()
+                    dialog?.dismiss()
+                }
+                text = secondButtonText
+                visibility = View.VISIBLE
             }
-            secondButton?.text = secondButtonText
-            secondButton?.visibility = View.VISIBLE
         }
 
         val closeButton = view?.findViewById<Button>(R.id.closeButton)
@@ -78,7 +82,13 @@ class BottomDialogFragment : BottomSheetDialogFragment() {
 
         image?.let {
             val helpImageView = view?.findViewById<ImageView>(R.id.helpImageView)
-            helpImageView?.setImageDrawable(ResourcesCompat.getDrawable(resources, it, requireContext().theme))
+            helpImageView?.setImageDrawable(
+                ResourcesCompat.getDrawable(
+                    resources,
+                    it,
+                    requireContext().theme,
+                ),
+            )
         }
 
         return view

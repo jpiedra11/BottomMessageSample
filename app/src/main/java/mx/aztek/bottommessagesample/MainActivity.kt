@@ -15,19 +15,18 @@ class MainActivity : AppCompatActivity() {
     fun showAddressDialog(view: View) {
         val addressFragment =
             BottomDialogFragment.Builder()
-                .setTitle("Comprueba tu domicilio")
-                .setMessage(
-                    "No pudimos detectar con exactitud tu dirección, " +
-                        "para validar tu domicilio, " +
-                        "compártenos por favor un recibo de TELMEX o CFE " +
-                        "con antiguedad no mayor a 3 meses",
-                )
-                .setFirstButton("Tomar foto") {
+                .setTitle(getString(R.string.address_title))
+                .setMessage(getString(R.string.address_message))
+                .setFirstButton(getString(R.string.take_picture)) {
                     val takePhotoIntent = Intent(this, PhotoActivity::class.java)
                     startActivity(takePhotoIntent)
                 }
-                .setSecondButton("Cargar archivo") {
-                    Toast.makeText(this, "Second button clicked", Toast.LENGTH_LONG).show()
+                .setSecondButton(getString(R.string.load_file)) {
+                    Toast.makeText(
+                        this,
+                        getString(R.string.second_button_clicked),
+                        Toast.LENGTH_LONG,
+                    ).show()
                 }
                 .build()
 
@@ -37,11 +36,8 @@ class MainActivity : AppCompatActivity() {
     fun showCICDialog(view: View) {
         val cicFragment =
             BottomDialogFragment.Builder()
-                .setTitle("CIC")
-                .setMessage(
-                    "El número CIC está al reverso de tu INE y tiene 9 dígitos. " +
-                        "Sólo aparece en modelos D, E, F, G y H",
-                )
+                .setTitle(getString(R.string.cic))
+                .setMessage(getString(R.string.cic_message))
                 .setImage(R.drawable.cic)
                 .build()
 
